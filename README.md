@@ -1,4 +1,4 @@
-# plantclassifier
+# plant_classifier
 
 This is the final capstone project for my bachelor of science degree in computer science. 
 This application can classify 35 different types of edible plants commonly found in the wild based on uploaded images.
