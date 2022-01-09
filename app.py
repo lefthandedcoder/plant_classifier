@@ -1,13 +1,19 @@
 import os
 from tensorflow.keras.models import load_model
 from flask import Flask, render_template, request
+from werkzeug.utils import secure_filename
 from tensorflow.keras.preprocessing.image import load_img , img_to_array
 from tensorflow.keras.backend import expand_dims
 
-app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-model = load_model(os.path.join(BASE_DIR, 'model.hdf5'))
 ALLOWED_EXT = set(['jpg', 'jpeg', 'png'])
+UPLOAD_FOLDER = 'static/images'
+
+app = Flask(__name__)
+app.secret_key = "secret key"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+model = load_model(os.path.join(BASE_DIR, 'model.hdf5'))
 
 
 def allowed_file(filename):
@@ -85,11 +91,12 @@ def success():
     error = ''
     target_img = os.path.join(os.getcwd(), 'static/images')
     if request.method == 'POST':
-        if (request.files):
+        if request.files:
             file = request.files['file']
             if file and allowed_file(file.filename):
-                file.save(os.path.join(target_img, file.filename))
-                img_path = os.path.join(target_img, file.filename)
+                filename = secure_filename(file.filename)
+                file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+                img_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 img = file.filename
                 class_result, prob_result = predict(img_path, model)
                 predictions = {
