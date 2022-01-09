@@ -7,7 +7,7 @@ from tensorflow.keras.backend import expand_dims
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ALLOWED_EXT = set(['jpg', 'jpeg', 'png'])
-UPLOAD_FOLDER = 'static/images'
+UPLOAD_FOLDER = 'tmp'
 
 app = Flask(__name__)
 app.secret_key = "secret key"
@@ -89,7 +89,7 @@ def home():
 @app.route('/results', methods=['GET', 'POST'])
 def success():
     error = ''
-    target_img = os.path.join(os.getcwd(), 'static/images')
+    target_img = os.path.join(os.getcwd(), UPLOAD_FOLDER)
     if request.method == 'POST':
         if request.files:
             file = request.files['file']
