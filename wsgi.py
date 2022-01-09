@@ -1,8 +1,9 @@
 # import flask app but need to call it "application" for WSGI to work
-from app import app as application  # noqa
+from app import app
+from app import create_app  # noqa
 
 if __name__ == "__main__":
-    application.run()
+    app.run()
 
 
 app = create_app()
