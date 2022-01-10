@@ -4,19 +4,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin: 0;
     padding: 0;
-    gap: 2vw;
+    gap: 1vw;
     font-family: Arial, Helvetica, sans-serif;
 }
 #logo {
-    width: 20vw;
+    width: 10vw;
 }
 header {
     background-color: #818c3c;
     color: #f4f4f4;
-    font-size: 6vw;
+    font-size: 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,7 +34,7 @@ button {
     flex-shrink: 0;
     font-size: 5vw;
     margin: 1vw 1.5vw;
-    padding: 1vw;
+    padding: 1.5vw;
     border: 1px solid #1F2937;
 }
 form {
@@ -44,7 +44,7 @@ form {
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 7vw;
+    font-size: 5vw;
     gap: 1vw;
 }
 .form-group {
@@ -54,9 +54,9 @@ form {
     justify-content: center;
 }
 input {
-    margin: 4vw;
-    font-size: 5vw;
-    padding: 3vw;
+    margin: 3vw;
+    font-size: 3vw;
+    padding: 2vw;
 }
 img {
     width: 80vw;
@@ -65,7 +65,7 @@ img {
 }
 .prediction {
     margin: 0 10vw;
-    font-size: 7vw;
+    font-size: 5vw;
     font-weight: 800;
     color: #1F2937;
 }
@@ -79,11 +79,8 @@ img {
     align-items: center;
     justify-content: center;
 }
-.info h2, p {
+.info h2, p, li {
     text-align: center;
-    font-size: 4vw;
-}
-.info p {
     font-size: 3vw;
 }
 ul {
@@ -97,7 +94,7 @@ li {
     padding: 0 4vw;
     display: flex;
     gap: 4vw;
-    font-size: 4vw;
+    font-size: 3.5vw;
 }
 footer {
     margin: 0;
@@ -116,34 +113,34 @@ footer {
 
 @media screen and (min-width:1300px)  {
     header {
-        font-size: 3vw;
+        font-size: 1.5vw;
+    }
+    #logo {
+        width: 5vw;
     }
     form {
-        font-size: 2vw;
+        font-size: 1vw;
     }
     input {
-        font-size: 2vw;
+        font-size: 1vw;
+        margin: 0;
         padding: 0vw;
     }
     button {
         font-size: 1vw;
+        padding: 0.25vw;
     }
     .prediction {
-        font-size: 2vw;
+        font-size: 1vw;
     }
-    .info h2, p {
-        font-size: 2vw;
-    }
-    .info p {
-        font-size: 1.5vw;
-    }
-    .list {
-        font-size: 2vw;
+    .info h2, p, li {
+        font-size: 1vw;
     }
     footer {
         font-size: 1vw;
     }
     li {
-        padding: 1vw;
+        padding: 0.25vw;
+        margin: 0;
     }
 }
