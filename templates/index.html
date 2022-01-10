@@ -74,6 +74,35 @@
                 font-weight: 800;
                 color: #1F2937;
             }
+            .info {
+                background-color: #818c3c;
+                margin: 8vw;
+                padding: 0 4vw;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            .info h2, p {
+                text-align: center;
+                font-size: 4vw;
+            }
+            .info p {
+                font-size: 3vw;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                padding: 2vw;
+            }
+            .list {
+                background-color: #818c3c;
+                padding: 0 4vw;
+                display: flex;
+                gap: 4vw;
+                font-size: 4vw;
+            }
             footer {
                 margin: 0;
                 padding: 0;
@@ -107,8 +136,20 @@
                 .prediction {
                     font-size: 2vw;
                 }
+                .info h2, p {
+                    font-size: 2vw;
+                }
+                .info p {
+                    font-size: 1.5vw;
+                }
+                .list {
+                    font-size: 2vw;
+                }
                 footer {
                     font-size: 1vw;
+                }
+                li {
+                    padding: 1vw;
                 }
             }
         </style>
@@ -130,6 +171,51 @@
             </div>
             <br>
             <div class="prediction">{{ prediction }}</div>
+        </div>
+        <div class= "info">
+            <h2>Wild Edible Plant Types Currently Supported:</h2>
+            <div class="list">
+                <ul class="left">
+                    <li>Alfalfa</li>
+                    <li>Allium</li>
+                    <li>Borage</li>
+                    <li>Burdock</li>
+                    <li>Calendula</li>
+                    <li>Cattail</li>
+                    <li>Chickweed</li>
+                    <li>Chicory</li>
+                    <li>Chive Blossom</li>
+                    <li>Coltsfoot</li>
+                    <li>Common Mallow</li>
+                    <li>Common Milkweed</li>
+                    <li>Common Vetch</li>
+                    <li>Common Yarrow</li>
+                    <li>Coneflower</li>
+                    <li>Cow Parsley</li>
+                    <li>Cowslip</li>
+                </ul>
+                <ul class="right">
+                    <li>Crimson Clover</li>
+                    <li>Crithmum Maritimum</li>
+                    <li>Daisy</li>
+                    <li>Dandelion</li>
+                    <li>Fennel</li>
+                    <li>Fireweed</li>
+                    <li>Gardenia</li>
+                    <li>Garlic Mustard</li>
+                    <li>Geranium</li>
+                    <li>Ground Ivy</li>
+                    <li>Harebell</li>
+                    <li>Henbit</li>
+                    <li>Knapweed</li>
+                    <li>Meadowsweet</li>
+                    <li>Mullein</li>
+                    <li>Pickerelweed</li>
+                    <li>Ramsons</li>
+                    <li>Red Clover</li>
+                </ul>
+            </div>
+            <p>Disclaimer: This is for demonstration purposes only. Do not use this to determine what is actually edible.</p>
         </div>
         <div style="margin-top:500px"></div>
         <footer>
