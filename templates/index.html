@@ -1,29 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Wild Edible Plant Classification App</title>
+        <style>
+            body {
+                background-color: #818c3c;
+                color: #F9FAF8;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+                gap: 2vw;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header {
+                background-color: #19270d;
+                font-size: 5vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 4vw;
+                width: 100%;
+                font-weight: 800;
+                top: 0;
+                right: 0;
+                left: 0;
+            }
+            button {
+                background-color: #19270d;
+                color: #F9FAF8;
+                flex-shrink: 0;
+                font-size: 2vw;
+                margin: 1vw 1.5vw;
+                padding: 1vw;
+                border: 1px solid #1F2937;
+            }
+            form {
+                color: #1F2937;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                font-weight: 800;
+                font-size: 2vw;
+                gap: 1vw;
+            }
+            img {
+                width: auto;
+                max-height: 40vw;
+                margin: -4vw;
+            }
+            .prediction {
+                margin: 0 10vw;
+                font-size: 2vw;
+                font-weight: 800;
+                color: #1F2937;
+            }
+            footer {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                background-color: #19270d;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+
+            @media screen and (max-width: 750px) {
+                form {
+                    font-size: 4vw;
+                }
+                button {
+                    font-size: 4vw;
+                }
+                .prediction {
+                    font-size: 4vw;
+                }
+            }
+        </style>
     </head>
     <body>
-        <div class = "index-main">
+        <header>Wild Edible Plant Classifier</header>
+        <form action="{{ url_for('upload_image')}}" method="POST" enctype="multipart/form-data">
+              <div class="form-group">
+                <label for="image" class="upload-label" >Select an Image</label>
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" name="image" id="image">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+            <br>
             <div>
-                <div class = "header-content">
-                     <h1>Wild Edible Plant Classifier</h1>
-                </div>
+                <img id="uploaded-image" src="data:image/jpeg;base64,{{ img_data }}">
             </div>
-            <div class="upload-section">
-                <div class="upload-file">
-                    <form class = "file-form" action="/results" method="post", enctype="multipart/form-data">
-                        <input class="file-form-input" type="file" , name = "file"/>
-                        <button class="btn btn-success btn-lg">Upload</button>
-                    </form>
-                </div>
-                <div class = "header-content-sub">
-                    <p>{{error}}</p>
-                </div>
-            </div>
+            <br>
+            <div class="prediction">{{ prediction }}</div>
         </div>
+        <footer>
+            <p>Copyright &copy; Christian Dye 2022</p>
+        </footer>
     </body>
 </html>
