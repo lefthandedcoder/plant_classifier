@@ -63,7 +63,7 @@ def home():
     return render_template("index.html")
 
 
-@app.route('/api/image', methods=['POST'])
+@app.route('/', methods=['POST'])
 def upload_image():
     if 'image' not in request.files:
         return render_template('index.html', prediction="Please upload an image.")
