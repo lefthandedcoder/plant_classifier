@@ -4,15 +4,10 @@ import io
 from io import BytesIO
 from tensorflow.keras.models import load_model
 import base64
-from flask import Flask, render_template, request, url_for
+from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.backend import expand_dims
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
-from tensorflow.keras.applications.mobilenet_v2 import decode_predictions
-import imageio
-import numpy as np
-import cv2
 
 ALLOWED_EXT = set(['jpg', 'jpeg'])
 IMAGE_HEIGHT = 224
@@ -60,7 +55,6 @@ classes = ['alfalfa',
            'ramsons',
            'red_clover']
 app = Flask(__name__)
-first_model = load_model('mobilenet.hdf5', compile=True)
 model = load_model('model.hdf5', compile=True)
 
 
@@ -105,10 +99,10 @@ def upload_image():
         prob_result.append((prob[0] * 100).round(2))
         class_result.append(dict_result[prob[0]])
         return render_template('index.html', img_data=encoded_img_data.decode('utf-8'),
-                               prediction='This is most likely an image of the wild edible plant ' + str(class_result[0]) +
-                                          ' with a confidence of ' + str(prob_result[0]) + '%')
+                               prediction='This is most likely an image of the wild edible plant '
+                                          + str(class_result[0]) + ' with a confidence of ' + str(prob_result[0]) + '%')
     else:
-        return render_template('index.html', prediction='Invalid file extension.')
+        return render_template(prediction='Invalid file extension.')
 
 
 if __name__ == '__main__':
