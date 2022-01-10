@@ -8,8 +8,13 @@ from flask import Flask, render_template, request, url_for
 from werkzeug.utils import secure_filename
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.backend import expand_dims
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
+from tensorflow.keras.applications.mobilenet_v2 import decode_predictions
+import imageio
+import numpy as np
+import cv2
 
-ALLOWED_EXT = set(['jpg', 'jpeg', 'png', 'gif'])
+ALLOWED_EXT = set(['jpg', 'jpeg'])
 IMAGE_HEIGHT = 224
 IMAGE_WIDTH = 224
 IMAGE_CHANNELS = 3
@@ -55,6 +60,7 @@ classes = ['alfalfa',
            'ramsons',
            'red_clover']
 app = Flask(__name__)
+first_model = load_model('mobilenet.hdf5', compile=True)
 model = load_model('model.hdf5', compile=True)
 
 
