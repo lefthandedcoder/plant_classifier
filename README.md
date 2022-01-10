@@ -1,7 +1,7 @@
 # plant_classifier
 <p float="left">
-  <img src="https://github.com/lefthandedcoder/plant_classifier/blob/main/static/iphone_screenshot.jpg" width="100" />
-  <img src="https://github.com/lefthandedcoder/plant_classifier/blob/main/static/iphone_screenshot2.jpg?raw=true" width="100" /> 
+  <img src="https://github.com/lefthandedcoder/plant_classifier/blob/main/static/iphone_screenshot.jpg" width="45vw" />
+  <img src="https://github.com/lefthandedcoder/plant_classifier/blob/main/static/iphone_screenshot2.jpg?raw=true" width="45vw" /> 
   </p>
 
 This is the final capstone project for my bachelor of science degree in computer science. 
