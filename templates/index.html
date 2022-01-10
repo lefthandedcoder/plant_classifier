@@ -2,11 +2,13 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Wild Edible Plant Classification App</title>
         <style>
             body {
-                background-color: #818c3c;
-                color: #F9FAF8;
+                background-color: #f4f4f4;
+                color: #19270d;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -17,8 +19,9 @@
                 font-family: Arial, Helvetica, sans-serif;
             }
             header {
-                background-color: #19270d;
-                font-size: 5vw;
+                background-color: #818c3c;
+                color: #f4f4f4;
+                font-size: 6vw;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -34,7 +37,7 @@
                 background-color: #19270d;
                 color: #F9FAF8;
                 flex-shrink: 0;
-                font-size: 2vw;
+                font-size: 5vw;
                 margin: 1vw 1.5vw;
                 padding: 1vw;
                 border: 1px solid #1F2937;
@@ -44,10 +47,21 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                justify-content: space-around;
+                justify-content: center;
                 font-weight: 800;
-                font-size: 2vw;
+                font-size: 7vw;
                 gap: 1vw;
+            }
+            .form-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            input {
+                margin: 4vw;
+                font-size: 5vw;
+                padding: 3vw;
             }
             img {
                 width: 80vw;
@@ -56,7 +70,7 @@
             }
             .prediction {
                 margin: 0 10vw;
-                font-size: 2vw;
+                font-size: 7vw;
                 font-weight: 800;
                 color: #1F2937;
             }
@@ -64,7 +78,8 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                background-color: #19270d;
+                background-color: #818c3c;
+                color: #f4f4f4;
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -72,24 +87,28 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
+                font-size: 5vw;
             }
 
-            @media screen and (max-width: 500px) {
-
+            @media screen and (min-width:1300px)  {
                 header {
-                    font-size: 24px;
+                    font-size: 3vw;
                 }
                 form {
-                    font-size: 18px;
+                    font-size: 2vw;
+                }
+                input {
+                    font-size: 2vw;
+                    padding: 0vw;
                 }
                 button {
-                    font-size: 18px;
+                    font-size: 1vw;
                 }
                 .prediction {
-                    font-size: 18px;
+                    font-size: 2vw;
                 }
                 footer {
-                    font-size: 16px;
+                    font-size: 1vw;
                 }
             }
         </style>
