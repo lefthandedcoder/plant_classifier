@@ -59,7 +59,7 @@ input {
     padding: 2vw;
 }
 img {
-    width: 80vw;
+    max-width: 80vw;
     padding: 4vw;
     margin: -4vw;
 }
